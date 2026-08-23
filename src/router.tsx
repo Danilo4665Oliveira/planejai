@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { RootLayout } from './components/shared/layout/RootLayout'
+import { RootLayout } from './components/layout/RootLayout'
 import { SimulationFormPage } from './pages/SimulationFormPage'
 
 export const router = createBrowserRouter([
