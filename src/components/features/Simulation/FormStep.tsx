@@ -3,6 +3,7 @@ import { type SyntheticEvent, useState } from 'react'
 
 import { Button } from '@/components/shared/Button'
 import { Input, type InputProps } from '@/components/shared/Input'
+import { formatCurrencyMask } from '@/utils/currency'
 
 export interface FormStepProps {
   id: string
@@ -37,7 +38,7 @@ export function FormStep({
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if(!inputValue){
+    if (!inputValue) {
       return
     }
 
@@ -60,7 +61,13 @@ export function FormStep({
         <Input
           {...inputProps}
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) =>
+            setInputValue(
+              inputProps.prefix === 'R$'
+                ? formatCurrencyMask(e.target.value)
+                : e.target.value,
+            )
+          }
         />
         <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
           {!hideBackButton && (
