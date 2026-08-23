@@ -42,11 +42,15 @@ const callGeminiAPI = async (prompt: string) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { responseMimeType: 'application/json' },
     }),
   })
 
   if (!response.ok) {
-    throw new Error(`Erro na requisição: ${response.status}`)
+    const errorBody = await response.text()
+    throw new Error(
+      `Erro na requisição (${response.status}): ${errorBody || response.statusText}`,
+    )
   }
 
   return (await response.json()) as GeminiResponse

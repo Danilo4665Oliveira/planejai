@@ -5,23 +5,23 @@ import type { SimulationRecord } from './simulation'
 
 const RESPONSE_SCHEMA = `{
   "feasibility": {
-    "status": "viable" | "needs_adjustment" | "unfeasible",
-    "content": "<Análise objetiva sobre se a meta é atingível no prazo com o valor disponível. Mencione os números relevantes.>"
+    "status": "viable",
+    "content": "Análise objetiva sobre se a meta é atingível no prazo com o valor disponível. Mencione os números relevantes."
   },
   "diagnosis": {
-    "content": "<Diagnóstico focado no comprometimento do orçamento: quanto % da renda está comprometida com gastos e dívidas, e o que isso representa para a saúde financeira.>"
+    "content": "Diagnóstico focado no comprometimento do orçamento: quanto % da renda está comprometida com gastos e dívidas, e o que isso representa para a saúde financeira."
   },
   "suggestions": {
-    "items": ["<Sugestão prática e concreta para reduzir gastos ou reorganizar o orçamento>"]
+    "items": ["Sugestão prática e concreta para reduzir gastos ou reorganizar o orçamento"]
   },
   "extraIncome": {
-    "items": ["<Ideia prática para gerar renda extra compatível com a realidade brasileira>"]
+    "items": ["Ideia prática para gerar renda extra compatível com a realidade brasileira"]
   },
   "investment": {
-    "items": ["<Sugestão de investimento acessível para o perfil apresentado, com foco em atingir a meta>"]
+    "items": ["Sugestão de investimento acessível para o perfil apresentado, com foco em atingir a meta"]
   },
   "motivation": {
-    "content": "<Mensagem final motivacional e personalizada, citando a meta pelo nome.>"
+    "content": "Mensagem final motivacional e personalizada, citando a meta pelo nome."
   }
 }`
 
